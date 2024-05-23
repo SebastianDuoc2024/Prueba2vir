@@ -1,0 +1,16 @@
+FROM ubuntu:latest
+
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    python3 \
+    python3-pip
+
+
+COPY .  ~/prueba2/contenedor1
+WORKDIR  ~/prueba2/contenedor1
+
+RUN pip install -r requeriments.txt
+
+CMD ["python3", "main.py"]
+
+
